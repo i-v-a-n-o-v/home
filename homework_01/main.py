@@ -8,7 +8,7 @@ def power_numbers(*n):
     for i in n:
         sq.append(i**2)
     return sq
-print (power_numbers(1, 2, 5, 7))
+
 """
     функция, которая принимает N целых чисел,
     и возвращает список квадратов этих чисел
@@ -51,3 +51,4 @@ def filter_numbers(li, func):
       out_filter = filter(is_prime, li)
     print(list(out_filter))
 
+filter_numbers([831, 5133, 8519, 1907, 9451, 1421, 3137, 7733, 2671, 6361, 3037, 6109, 1651, 5667, 1949], ODD)
