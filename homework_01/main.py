@@ -22,17 +22,35 @@ ODD = "odd"
 EVEN = "even"
 PRIME = "prime"
 
+def odd(in_num):
+    if(in_num % 2) == 1:
+        return True
+    else:
+        return False
+def even(in_num):
+    if(in_num % 2) == 0:
+        return True
+    else:
+        return False
+def is_prime(in_num):
+    k = 0
+    for i in range(2, in_num // 2+1):
+        if (in_num % i == 0):
+            k = k+1
+    if (k <= 0):
+        return True
+    else:
+        return False
 
 def filter_numbers(li, func):
-    print (func)
-    """
-    функция, которая на вход принимает список из целых чисел,
-    и возвращает только чётные/нечётные/простые числа
-    (выбор производится передачей дополнительного аргумента)
+    if func == ODD:
+      out_filter = filter(odd, li)
+    if func == EVEN:
+      out_filter = filter(even, li)
+    if func == PRIME:
+      out_filter = filter(is_prime, li)
+    print(list(out_filter))
 
-    >>> filter_numbers([1, 2, 3], ODD)
-    <<< [1, 3]
-    >>> filter_numbers([2, 3, 4, 5], EVEN)
-    <<< [2, 4]
-    """
 filter_numbers([1, 2, 3], ODD)
+filter_numbers([2, 1, 3, 5, 4], EVEN)
+filter_numbers([1, 2, 3,300], PRIME)
